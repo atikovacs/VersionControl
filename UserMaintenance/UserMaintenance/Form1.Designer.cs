@@ -39,33 +39,36 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(12, 21);
+            this.listBox1.Location = new System.Drawing.Point(9, 17);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(273, 356);
+            this.listBox1.Size = new System.Drawing.Size(206, 290);
             this.listBox1.TabIndex = 0;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(418, 52);
+            this.textBox2.Location = new System.Drawing.Point(314, 42);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(221, 22);
+            this.textBox2.Size = new System.Drawing.Size(167, 20);
             this.textBox2.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(321, 55);
+            this.label2.Location = new System.Drawing.Point(241, 45);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 16);
+            this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "label2";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(319, 87);
+            this.button1.Location = new System.Drawing.Point(239, 71);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(320, 34);
+            this.button1.Size = new System.Drawing.Size(240, 28);
             this.button1.TabIndex = 5;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
@@ -73,9 +76,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(511, 354);
+            this.button2.Location = new System.Drawing.Point(383, 288);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(128, 23);
+            this.button2.Size = new System.Drawing.Size(96, 19);
             this.button2.TabIndex = 6;
             this.button2.Text = "Fájlba írás";
             this.button2.UseVisualStyleBackColor = true;
@@ -83,24 +87,27 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(291, 354);
+            this.button3.Location = new System.Drawing.Point(218, 288);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(56, 19);
             this.button3.TabIndex = 7;
             this.button3.Text = "törlés";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(651, 396);
+            this.ClientSize = new System.Drawing.Size(488, 322);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.listBox1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);

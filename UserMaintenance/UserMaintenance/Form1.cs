@@ -46,5 +46,12 @@ namespace UserMaintenance
             }
             sw.Close();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //int akt = Convert.ToInt32(listBox1.SelectedValue);
+            //MessageBox.Show(listBox1.SelectedValue.ToString());
+            //listBox1.SelectedItem.Remove;
+        }
     }
 }
