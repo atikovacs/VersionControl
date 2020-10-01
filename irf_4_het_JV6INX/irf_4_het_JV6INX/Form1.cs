@@ -15,8 +15,9 @@ namespace irf_4_het_JV6INX
 {
     public partial class Form1 : Form
     {
-        List<Flat> Flats;
+        
         RealEstateEntities context = new RealEstateEntities();
+        List<Flat> Flats;
 
         Excel.Application xlApp;
         Excel.Workbook xlWB;
@@ -26,6 +27,23 @@ namespace irf_4_het_JV6INX
             InitializeComponent();
             LoadData();
             CreateExcel();
+            CreateTable();
+        }
+
+        private static void CreateTable()
+        {
+            string[] headers = new string[] {
+                "Kód",
+                "Eladó",
+                "Oldal",
+                "Kerület",
+                "Lift",
+                "Szobák száma",
+                "Alapterület (m2)",
+                "Ár (mFt)",
+                "Négyzetméter ár (Ft/m2)"};
+            //object[,] values = new object[Flats.Count, headers.Length];
+            object[,] values = new object[Flats.Count, headers.Length];
         }
 
         private void CreateExcel()
@@ -35,7 +53,7 @@ namespace irf_4_het_JV6INX
                 xlApp = new Excel.Application();
                 xlWB = xlApp.Workbooks.Add(Missing.Value);
                 xlSheet = xlWB.ActiveSheet;
-                //CreateTable();
+                CreateTable();
                 xlApp.Visible = true;
                 xlApp.UserControl = true;
             }
