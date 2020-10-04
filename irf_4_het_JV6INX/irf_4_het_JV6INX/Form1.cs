@@ -113,7 +113,6 @@ namespace irf_4_het_JV6INX
             ExcelCoordinate += x.ToString();
 
             return ExcelCoordinate;
-            //
         }
     }
 }
