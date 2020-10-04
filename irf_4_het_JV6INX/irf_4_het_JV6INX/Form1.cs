@@ -28,9 +28,10 @@ namespace irf_4_het_JV6INX
             LoadData();
             CreateExcel();
             CreateTable();
+            FormatTable();
         }
 
-        private static void CreateTable()
+        private void CreateTable()
         {
             string[] headers = new string[] {
                 "Kód",
@@ -42,8 +43,18 @@ namespace irf_4_het_JV6INX
                 "Alapterület (m2)",
                 "Ár (mFt)",
                 "Négyzetméter ár (Ft/m2)"};
-            //object[,] values = new object[Flats.Count, headers.Length];
+
             object[,] values = new object[Flats.Count, headers.Length];
+            int counter = 0;
+            foreach (Flat f in Flats)
+            {
+                values[counter, 0] = f.Code;
+                values[counter, 8] = "";
+                counter++;
+            }
+
+            xlSheet.get_Range
+            (GetCell(2, 1), GetCell(1 + values.GetLength(0), values.GetLength(1))).Value2 = values;
         }
 
         private void CreateExcel()
@@ -71,6 +82,28 @@ namespace irf_4_het_JV6INX
         private void LoadData()
         {
             Flats = context.Flats.ToList();
+        }
+
+        private string GetCell(int x, int y)
+        {
+            string ExcelCoordinate = "";
+            int dividend = y;
+            int modulo;
+
+            while (dividend > 0)
+            {
+                modulo = (dividend - 1) % 26;
+                ExcelCoordinate = Convert.ToChar(65 + modulo).ToString() + ExcelCoordinate;
+                dividend = (int)((dividend - modulo) / 26);
+            }
+            ExcelCoordinate += x.ToString();
+
+            return ExcelCoordinate;
+        }
+
+        private void FormatTable() 
+        {
+            
         }
     }
 }
