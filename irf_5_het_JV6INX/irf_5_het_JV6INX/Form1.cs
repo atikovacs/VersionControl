@@ -77,10 +77,10 @@ namespace irf_5_het_JV6INX
             sw.Write("Időszak");
             sw.Write("  ");
             sw.Write("Nyereség");
-            foreach (var ny in nyeresegekRendezve)
+            /*foreach (var ny in nyeresegekRendezve//?)
             {
-                sw.Write(ny.)
-            }
+                sw.Write(ny.);
+            }*/
             sw.Close();
         }
     }
