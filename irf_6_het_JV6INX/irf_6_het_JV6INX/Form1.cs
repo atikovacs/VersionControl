@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,13 +18,15 @@ namespace irf_6_het_JV6INX
     public partial class Form1 : Form
     {
         BindingList<RateData> Rates = new BindingList<RateData>();
+        /*BindingList<string> Currencies = new BindingList<string>();*/
         public Form1()
         {
             InitializeComponent();
-            dataGridView1.DataSource = Rates;
-            GetExchangeRates();
 
-            XMLProcessing();
+            /*comboBox1.DataSource = Currencies;
+
+            RefreshData();*/
+            
         }
 
         private void GetExchangeRates() 
@@ -32,7 +35,7 @@ namespace irf_6_het_JV6INX
 
             var mnbService = new MNBArfolyamServiceSoapClient();
 
-            var request = new GetExchangeRatesRequestBody() {currencyNames= "EUR", startDate= "2020-01-01", endDate="2020-06-30" };
+            var request = new GetExchangeRatesRequestBody() { currencyNames = comboBox1.SelectedItem.ToString(), startDate = dateTimePicker1.Value.ToString(), endDate = dateTimePicker2.Value.ToString() };
 
             var response = mnbService.GetExchangeRates(request);
 
@@ -71,12 +74,27 @@ namespace irf_6_het_JV6INX
                 chartArea.AxisY.MajorGrid.Enabled = false;
                 chartArea.AxisY.IsStartedFromZero = false;
             }
-
+        }
+        private void RefreshData() 
+        {
+            Rates.Clear();
+            GetExchangeRates();
+            dataGridView1.DataSource = Rates;
         }
 
-        private void XMLProcessing() 
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            
+            RefreshData();
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            RefreshData();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RefreshData();
         }
     }
 }
