@@ -18,14 +18,15 @@ namespace irf_6_het_JV6INX
     public partial class Form1 : Form
     {
         BindingList<RateData> Rates = new BindingList<RateData>();
-        /*BindingList<string> Currencies = new BindingList<string>();*/
+        BindingList<string> Currencies = new BindingList<string>();
         public Form1()
         {
             InitializeComponent();
 
-            /*comboBox1.DataSource = Currencies;
-
-            RefreshData();*/
+            //comboBox1.DataSource = Currencies;
+            /*var mnbService = new MNBArfolyamServiceSoapClient();
+            var valuta = mnbService.GetCurrencies;*/
+            RefreshData();
             
         }
 
@@ -35,7 +36,7 @@ namespace irf_6_het_JV6INX
 
             var mnbService = new MNBArfolyamServiceSoapClient();
 
-            var request = new GetExchangeRatesRequestBody() { currencyNames = comboBox1.SelectedItem.ToString(), startDate = dateTimePicker1.Value.ToString(), endDate = dateTimePicker2.Value.ToString() };
+            var request = new GetExchangeRatesRequestBody() { currencyNames = comboBox1.SelectedItem.ToString(), startDate = dateTimePicker1.Value.ToString(), endDate = dateTimePicker2.Value.ToString()};
 
             var response = mnbService.GetExchangeRates(request);
 
