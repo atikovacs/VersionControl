@@ -1,4 +1,5 @@
-﻿using irf_6_het_JV6INX.MnbServiceReference;
+﻿using irf_6_het_JV6INX.Entities;
+using irf_6_het_JV6INX.MnbServiceReference;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,10 +14,13 @@ namespace irf_6_het_JV6INX
 {
     public partial class Form1 : Form
     {
+        BindingList<RateData> Rates;
         public Form1()
         {
             InitializeComponent();
             GetExchangeRates();
+
+            dataGridView1.DataSource = Rates;
         }
 
         private void GetExchangeRates() 
