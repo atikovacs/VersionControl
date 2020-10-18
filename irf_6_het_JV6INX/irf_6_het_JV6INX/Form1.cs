@@ -23,8 +23,8 @@ namespace irf_6_het_JV6INX
         {
             InitializeComponent();
 
-            //comboBox1.DataSource = Currencies;
-            /*var mnbService = new MNBArfolyamServiceSoapClient();
+            /*comboBox1.DataSource = Currencies;
+            var mnbService = new MNBArfolyamServiceSoapClient();
             var valuta = mnbService.GetCurrencies;*/
             RefreshData();
             
