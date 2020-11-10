@@ -23,10 +23,7 @@ namespace irf_8_het_JV6INX.Abstractions
             DrawImage(e.Graphics);
         }
 
-        protected void DrawImage(Graphics g)
-        {
-            g.FillEllipse(new SolidBrush(Color.Blue), 0, 0, Width, Height);
-        }
+        protected abstract void DrawImage(Graphics g);
 
         public virtual void MoveToy()
         {
