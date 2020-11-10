@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace irf_8_het_JV6INX.Entities
 {
-    public class BallFactory : IToyFactory
+    public class IToyFactory : Abstractions.IToyFactory
     {
-        public Toy CreateNew()
+        public Abstractions.Toy CreateNew()
         {
-            return new Ball();
+            return new Toy();
         }
     }
 }
