@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace irf_8_het_JV6INX.Entities
 {
-    class Ball : Label
+    public class Ball : Label
     {
         public Ball()
         {

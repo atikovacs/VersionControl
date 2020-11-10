@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace irf_8_het_JV6INX.Entities
 {
-    class BallFactory
+    public class BallFactory
     {
         public Ball CreateNew()
         {
