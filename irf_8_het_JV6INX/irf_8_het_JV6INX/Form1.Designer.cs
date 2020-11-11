@@ -36,13 +36,14 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.buttonBallColor = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // mainPanel
             // 
-            this.mainPanel.Location = new System.Drawing.Point(-1, 103);
+            this.mainPanel.Location = new System.Drawing.Point(-1, 157);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(801, 348);
+            this.mainPanel.Size = new System.Drawing.Size(801, 371);
             this.mainPanel.TabIndex = 0;
             // 
             // createTimer
@@ -95,11 +96,22 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Coming Next:";
             // 
+            // buttonBallColor
+            // 
+            this.buttonBallColor.BackColor = System.Drawing.Color.DarkRed;
+            this.buttonBallColor.Location = new System.Drawing.Point(134, 91);
+            this.buttonBallColor.Name = "buttonBallColor";
+            this.buttonBallColor.Size = new System.Drawing.Size(98, 23);
+            this.buttonBallColor.TabIndex = 5;
+            this.buttonBallColor.UseVisualStyleBackColor = false;
+            this.buttonBallColor.Click += new System.EventHandler(this.buttonBallColor_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 527);
+            this.Controls.Add(this.buttonBallColor);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -121,6 +133,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonBallColor;
     }
 }
 

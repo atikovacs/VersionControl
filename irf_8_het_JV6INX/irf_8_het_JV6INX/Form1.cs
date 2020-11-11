@@ -78,5 +78,15 @@ namespace irf_8_het_JV6INX
             _nextToy.Left = label1.Left + 10;
             Controls.Add(_nextToy);
         }
+
+        private void buttonBallColor_Click(object sender, EventArgs e)
+        {
+            var button = (Button)sender;
+            var szin = new ColorDialog();
+            szin.Color = button.BackColor;
+            if (szin.ShowDialog() != DialogResult.OK)
+                return;
+            button.BackColor = szin.Color;
+        }
     }
 }
