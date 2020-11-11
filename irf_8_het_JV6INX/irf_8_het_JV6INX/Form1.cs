@@ -64,7 +64,10 @@ namespace irf_8_het_JV6INX
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Factory = new BallFactory();
+            Factory = new BallFactory
+            {
+                BallColor = buttonBallColor.BackColor
+            };
         }
 
         private void DisplayNext()
