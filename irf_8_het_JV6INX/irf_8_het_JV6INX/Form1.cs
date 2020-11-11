@@ -1,4 +1,5 @@
-﻿using irf_8_het_JV6INX.Entities;
+﻿using irf_8_het_JV6INX.Abstractions;
+using irf_8_het_JV6INX.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,7 +24,7 @@ namespace irf_8_het_JV6INX
         public Form1()
         {
             InitializeComponent();
-            Factory = new IToyFactory();
+            Factory = new Entities.BallFactory();
         }
 
         private void createTimer_Tick(object sender, EventArgs e)
