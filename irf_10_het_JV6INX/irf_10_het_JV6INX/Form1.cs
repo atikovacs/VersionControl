@@ -1,6 +1,13 @@
-﻿using System.Windows.Forms;
-using WorldsHardestGame;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using WorldsHardestGame;
 
 namespace irf_10_het_JV6INX
 {
@@ -15,6 +22,7 @@ namespace irf_10_het_JV6INX
         int generation = 1;
 
         Brain winnerBrain = null;
+
         public Form1()
         {
             InitializeComponent();
@@ -69,6 +77,16 @@ namespace irf_10_het_JV6INX
                     gc.AddPlayer(b.Mutate());
             }
             gc.Start();
+        }
+
+        private void button1_Click(object sender, System.EventArgs e)
+        {
+            gc.ResetCurrentLevel();
+            gc.AddPlayer(winnerBrain.Clone());
+            gc.AddPlayer();
+            ga.Focus();
+            gc.Start(true);
+            button1.Visible = true;
         }
     }
 }
